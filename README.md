@@ -7,21 +7,44 @@ estilo: ```date``` para saber que fecha es pero lo que quiero es que escribir ``
 
 ## Tipos de pregunta
 
-como te llamas
+### simples
 
-Respuesta:
-	```robin```
+Una pregunta simple ejemplo:
 
-cuanto es? 2+2
-respuesta
-	```4```
+```como te llamas?``` Respuesta: ``robin```
 
-Podemos ver que a la primera le pasamos a una pregunta en la segunda le pasamos la pregunta pero ademas le damos un dato adicional para que pueda responder a la pregunta
+### con datos extra
 
-pero en este caso ya no funcionaria
+Una pregunta con dato estra
 
-```cual es la capital de francia?```
+```cuanto es? 2+2``` respuesta ```4```
 
-el dato que necesita para responder a la pregunta, esta en la pregunta
+Aqui podemos pasar un dato al final de la pregunta, incluso esta fuera de ella, y sin este dato no podemos responder la pregunta
+
+### con dato extra dentro o completa
+
+```cual es la capital de Ecuador?``` respuesta ```Quito```
+
+En este caso el dato esta dentro de la pregunta ya que no podriamos hacerla de esta manera
+
+```cual es la capital de? Ecuador``` no suena natural
+
+
+### Actualemte
+
+Asi que por el momento ```paty``` solo se puede responder a preguntas simples
+
+## El problema
+
+Como se podran imaginar, podriamos hacer una lista de preguntas simples a las cuales ```paty``` podria responder
+pero rapidamente las preguntas serian tantas que no podriamos administrarlas en una base de datos
+
+## Solucion 
+
+Analizar la frase para saber que pregunta esta haciendo el usuario y darle una respuesta adecuada
+
+La solucion es simple, aunque la implementacion sea la complicada, 
+
+Listo, lo haces para mañana temprano jiii
 
 
