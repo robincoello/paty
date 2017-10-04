@@ -5,21 +5,23 @@ estilo: ```date``` para saber que fecha es pero lo que quiero es que escribir ``
 
 
 
- 
-## Extras
+## Tipos de pregunta
 
+como te llamas
 
+Respuesta:
+	```robin```
 
-    $# : contient le nombre de paramètres ;
+cuanto es? 2+2
+respuesta
+	```4```
 
-    $0 : contient le nom du script exécuté (ici ./variables.sh) ;
+Podemos ver que a la primera le pasamos a una pregunta en la segunda le pasamos la pregunta pero ademas le damos un dato adicional para que pueda responder a la pregunta
 
-    $1 : contient le premier paramètre ;
+pero en este caso ya no funcionaria
 
-    $2 : contient le second paramètre ;
+```cual es la capital de francia?```
 
-    … ;
-
-    $9 : contient le 9e paramètre.
+el dato que necesita para responder a la pregunta, esta en la pregunta
 
 
