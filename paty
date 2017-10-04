@@ -1,4 +1,7 @@
+# En fedora  es /usr/local/bin/latino
 #! /usr/bin/bash
+
+
 
 # esta es una funcion para la lista de preguntas
 # en si solo coje las lineas que empiezan por " 

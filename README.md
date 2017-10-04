@@ -5,13 +5,13 @@ estilo: ```date``` para saber que fecha es pero lo que quiero es que escribir ``
 
 
 
-## Tipos de pregunta
+## Tipos de preguntas
 
 ### simples
 
 Una pregunta simple ejemplo:
 
-```como te llamas?``` Respuesta: ``robin```
+```como te llamas?``` Respuesta: ```robin```
 
 ### con datos extra
 
@@ -39,12 +39,108 @@ Asi que por el momento ```paty``` solo se puede responder a preguntas simples
 Como se podran imaginar, podriamos hacer una lista de preguntas simples a las cuales ```paty``` podria responder
 pero rapidamente las preguntas serian tantas que no podriamos administrarlas en una base de datos
 
-## Solucion 
+## Solución 
 
 Analizar la frase para saber que pregunta esta haciendo el usuario y darle una respuesta adecuada
 
 La solucion es simple, aunque la implementacion sea la complicada, 
 
 Listo, lo haces para mañana temprano jiii
+
+## Instalación
+
+```
+cd ~
+git clone https://github.com/robincoello/paty.git
+
+# ahora copia
+sudo cp paty /usr/local/bin/
+
+# dale permisos de ejecución
+
+sudo chmod +x /usr/local/bin/paty
+
+```
+
+Ahora puedes hacer preguntas a paty
+
+```
+paty
+```
+
+Y te saldra esto:
+
+
+```
+robin, tienes que hacer una pregunta que pueda responder
+Esta es la lista de preguntas que puedo responder
+===================================
+"dame la lista de programas ") 
+"busca programa ") 
+"dame detalles de ") 
+"que version de fedora estoy usando ")
+"quien esta conectado ") 
+"quien soy ")
+"que fecha es ")
+"hola ")
+"chao ")
+"como te llamas "  | "cual es tu nombre ")
+"que edad tienes " | "cuantos años tienes ")
+"donde vives ")
+"como me llamo ")
+"ayudame " | "ayuda")
+"me quieres ")
+===================================
+
+```
+
+ahora intenta cualquier pregunta asi:
+
+```
+paty cual es tu nombre
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
