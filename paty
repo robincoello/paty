@@ -1,4 +1,3 @@
-# En fedora  es /usr/local/bin/latino
 #! /usr/bin/bash
 
 
@@ -7,11 +6,22 @@
 # en si solo coje las lineas que empiezan por " 
 # en este caso son las preguntas, si ubiera otro case,
 # tambien las presentaria
+
+rojo='\e[0;31m'; rojof='\e[0m'
+
+amarillo='\e[1;33m'; amarillof='\e[0m'
+
+azul='\e[0;34m'; azulf='\e[0m'
+
+	echo -e $azul
+
+
 lista_de_preguntas(){
-	echo Esta es la lista de preguntas que puedo responder
+#	echo -e "$azul Esta es la  lista de preguntas que puedo responder"
 	echo ===================================
-	sed -n '/^"/p' paty
+	sed -n '/^"/p' paty | nl
 	echo ===================================
+#	echo -e $azulf
 }
 
 # con esto cojo los parametros enviados para concatenarlos y hacer la pregunta
@@ -26,16 +36,16 @@ done
 #- Preguntas Sistema ----------------------------------
 case "$pregunta" in 
 
-"dame la lista de programas ") 
+"dame la lista de programas ")
 	echo Los programas son:
 	rpm -qa | nl
 ;;
 
-"busca programa ") 
+"busca programa ") # da error
         rpm -qa | grep "$2"
 ;;
 
-"dame detalles de ") 
+"dame detalles de ") # da error
        rpm -qai "$2"
 ;;
 
@@ -46,6 +56,34 @@ case "$pregunta" in
 	cat /etc/redhat-release	
 	echo 
 ;;
+
+"cuales son los grupos de paquetes disponibles ")
+	sudo dnf grouplist
+;;
+
+"actualiza el sistema ")
+	echo 
+	sudo dnf -y update
+	echo Ahora limpieza de paquetes
+	dnf clean packages
+	echo Listo $USER . 
+;;
+
+
+"cuales son las ip de mis cartas ")
+	ifconfig | grep inet
+;;
+
+
+"32 o 64 ")
+	echo Tu compu es: `arch`
+	echo Aca tienes mas detalles
+	lscpu
+	echo 
+	lshw -class cpu
+;;
+
+
 
 "quien esta conectado ") 
        who
@@ -110,3 +148,4 @@ case "$pregunta" in
 
 esac
 
+	echo -e $azulf

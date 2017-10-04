@@ -53,6 +53,8 @@ Listo, lo haces para mañana temprano jiii
 cd ~
 git clone https://github.com/robincoello/paty.git
 
+cd paty
+
 # ahora copia
 sudo cp paty /usr/local/bin/
 
