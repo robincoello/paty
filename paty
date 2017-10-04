@@ -19,7 +19,7 @@ azul='\e[0;34m'; azulf='\e[0m'
 lista_de_preguntas(){
 #	echo -e "$azul Esta es la  lista de preguntas que puedo responder"
 	echo ===================================
-	sed -n '/^"/p' paty | nl
+	sed -n '/^"/p' /usr/local/bin/paty | nl
 	echo ===================================
 #	echo -e $azulf
 }
@@ -36,13 +36,14 @@ done
 #- Preguntas Sistema ----------------------------------
 case "$pregunta" in 
 
+"actualizate ")
+	echo hola
+	#sudo cp paty /usr/local/bin
+;;
+
 "dame la lista de programas ")
 	echo Los programas son:
 	rpm -qa | nl
-;;
-
-"busca programa ") # da error
-        rpm -qa | grep "$2"
 ;;
 
 "dame detalles de ") # da error
@@ -83,6 +84,19 @@ case "$pregunta" in
 	lshw -class cpu
 ;;
 
+"abre un editor de texto ")
+	gedit 
+;;
+
+"cual es la version de apache ")
+	echo httpd -v
+	httpd -v
+;;
+
+"muestrame los procesos del sistema ")
+	echo ps axjf
+	ps axjf
+;;
 
 
 "quien esta conectado ") 
@@ -97,6 +111,7 @@ case "$pregunta" in
 "que fecha es ")
 	date
 ;;
+
 
 #- Preguntas personales ---------------------------------------------------
 "hola ")
