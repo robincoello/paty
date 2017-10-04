@@ -1,0 +1,25 @@
+#! /usr/bin/bash
+
+
+c1='hola'
+c2='que tal'
+c3="nos vamos"
+c4="a quito"
+c5="manana"
+
+c6="$c1 $c2 $c3 $c4 $c5"
+
+
+
+
+for i in "$@"
+do
+	caso+=" $i"
+done
+
+echo $caso
+
+
+
+
+

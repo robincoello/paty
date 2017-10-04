@@ -1,0 +1,109 @@
+#! /usr/bin/bash
+
+# esta es una funcion para la lista de preguntas
+# en si solo coje las lineas que empiezan por " 
+# en este caso son las preguntas, si ubiera otro case,
+# tambien las presentaria
+lista_de_preguntas(){
+	echo Esta es la lista de preguntas que puedo responder
+	echo ===================================
+	sed -n '/^"/p' paty
+	echo ===================================
+}
+
+# con esto cojo los parametros enviados para concatenarlos y hacer la pregunta
+# a causa de esto hay un espacio al final de cada pregunta (a correjir)
+# que me obliga a tenerlo en cuenta dentro del 'case'
+for i in "$@"
+do
+  	pregunta+="$i "
+done
+
+#echo $pregunta
+#- Preguntas Sistema ----------------------------------
+case "$pregunta" in 
+
+"dame la lista de programas ") 
+	echo Los programas son:
+	rpm -qa | nl
+;;
+
+"busca programa ") 
+        rpm -qa | grep "$2"
+;;
+
+"dame detalles de ") 
+       rpm -qai "$2"
+;;
+
+"que version de fedora estoy usando ")
+##	sudo dnf install -y redhat-lsb-core
+	echo 
+	lsb_release -a
+	cat /etc/redhat-release	
+	echo 
+;;
+
+"quien esta conectado ") 
+       who
+;;
+
+"quien soy ")
+	whoami
+;; 
+
+
+"que fecha es ")
+	date
+;;
+
+#- Preguntas personales ---------------------------------------------------
+"hola ")
+	echo Hola $USER me da gusto saber de ti!
+;;
+
+"chao ")
+	echo Te voy a extrañar, hasta pronto muaaa!!!
+;;
+
+"como te llamas "  | "cual es tu nombre ")
+	echo "Mi nombre es Patricia, pero puedes decirme paty"
+;;
+
+"que edad tienes " | "cuantos años tienes ")
+        echo "Tengo 18"
+;;
+
+"donde vives ")
+	echo "en realidad no vivo, solo soy un programa de computador"
+;;
+
+"como me llamo ")
+	echo $USER
+;;
+
+#- Ayuda de paty
+"ayudame " | "ayuda")
+	echo AYUDA
+	echo Ya, ya pero no llores!!!
+	lista_de_preguntas
+;;
+
+#- Otras ----------------------------------------------------------
+"me quieres ")
+	echo claro que si
+;;
+
+
+#- Preguntas no existentes --------------------------------------
+*)
+# si el usuario pregunta algo que no esta revisto, 
+# le pasamos un mensaje
+	echo $USER, tienes que hacer una pregunta que pueda responder
+# y la lista de preguntas que podemos responder
+	lista_de_preguntas
+
+;;
+
+esac
+

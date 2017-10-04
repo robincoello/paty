@@ -1,0 +1,21 @@
+#! /sbin/bash
+
+# programas
+
+case "$1" in 
+
+"programas")
+	rpm -qa | nl
+;;
+
+"programa")
+	rpm -qa
+;;
+
+
+*)
+	echo bash busca programas
+;;
+
+esac
+

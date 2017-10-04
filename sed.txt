@@ -1,0 +1,30 @@
+$ sed '/^#/d' test.txt
+Bonjour,
+# este es un comentario
+## que tiene dos lineas
+Ceci est un fichier de test.
+Ici la ligne numéro 4.
+
+Ici la ligne numéro 7.
+
+Au revoir
+
+
+
+"como estas? ")
+	echo bien 
+;;
+
+
+"que edad tienes? ")
+	echo tengo 18
+;;
+
+"me quieres? ")
+	echo Pero claro que si 
+;;
+
+
+###########################
+##########################
+#########################

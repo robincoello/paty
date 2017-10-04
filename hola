@@ -1,0 +1,37 @@
+#! /sbin/bash
+
+echo Hola $USER, que alegria verte.
+
+
+caso="$1"
+
+
+echo parametro es: $caso
+echo nombre del fichero es: $#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+case "$1" in 
+"")
+	echo  
+;;
+
+*) 
+
+	echo
+
+	
+esac
+
