@@ -1,37 +1,60 @@
-#! /sbin/bash
+#! /usr/bin/bash
 
-echo Hola $USER, que alegria verte.
-
-
-caso="$1"
-
-
-echo parametro es: $caso
-echo nombre del fichero es: $#
+# esta es una funcion para la lista de preguntas
+# en si solo coje las lineas que empiezan por " 
+# en este caso son las preguntas, si ubiera otro case,
+# tambien las presentaria
 
 
+##############################################
+##############################################
 
+altavoz="espeak -ves-la -p 99"
 
-
-
-
-
-
-
-
-
+# con esto cojo los parametros enviados para concatenarlos y hacer la pregunta
+# a causa de esto hay un espacio al final de cada pregunta (a correjir)
+# que me obliga a tenerlo en cuenta dentro del 'case'
+for i in "$@"
+do
+  	pregunta+="$i "
+done
 
 
 
-case "$1" in 
-"")
-	echo  
+#echo $pregunta
+#- Preguntas Sistema ----------------------------------
+case "$pregunta" in 
+
+
+
+
+
+#- Preguntas no existentes --------------------------------------
+*)
+	r="Hola $USER, me has pensado"
+	echo $r | $altavoz
+# y la lista de preguntas que podemos responder
+#	lista_de_preguntas
+
 ;;
 
-*) 
-
-	echo
-
-	
 esac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

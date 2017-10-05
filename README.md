@@ -108,9 +108,20 @@ paty cual es tu nombre
 
 
 
+## Para leer en json 
+
+```
+[robin@localhost paty]$ php pr-json.php | jq '.'
+{
+  "id": "01",
+  "pregunta": "Cual es la capital del Ecuador",
+  "respuesta": "Quito",
+  "estatus": "1"
+}
+[robin@localhost paty]$ 
 
 
-
+```
 
 
 
