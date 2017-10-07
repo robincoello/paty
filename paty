@@ -1,23 +1,21 @@
 #! /usr/bin/bash
 
+#  Para darle color a las respuetas
+#rojo='\e[0;31m'; rojof='\e[0m'
+#amarillo='\e[1;33m'; amarillof='\e[0m'
+#azul='\e[0;34m'; azulf='\e[0m'
+#	echo -e $azul
+
+
+
+##############################################
+# es para  que paty tenga voz
+altavoz="espeak -ves-la -p 99"
+
 # esta es una funcion para la lista de preguntas
 # en si solo coje las lineas que empiezan por "
 # en este caso son las preguntas, si ubiera otro case,
 # tambien las presentaria
-
-#rojo='\e[0;31m'; rojof='\e[0m'
-
-#amarillo='\e[1;33m'; amarillof='\e[0m'
-
-#azul='\e[0;34m'; azulf='\e[0m'
-
-#	echo -e $azul
-
-##############################################
-##############################################
-altavoz="espeak -ves-la -p 99"
-
-
 lista_de_preguntas(){
 #	echo -e "$azul Esta es la  lista de preguntas que puedo responder"
 	echo ===================================
@@ -28,14 +26,14 @@ lista_de_preguntas(){
 
 
 
+# esto es para hacer un bucle infinito para cuando llame a paty 
+# y salir de el solo cuando diga
+# paty chao, o algo parecido 
 
 #while [ -z $respuesta ]  || [ $respuesta != 'si'  ] 
 #do
 #        read -p '>> ' respuesta
 #done
-
-
-
 
 
 # con esto cojo los parametros enviados para concatenarlos y hacer la pregunta
@@ -48,7 +46,6 @@ done
 
 
 
-#echo $pregunta
 #- Preguntas Sistema ----------------------------------
 case "$pregunta" in 
 
@@ -56,8 +53,8 @@ case "$pregunta" in
 
 	path="/usr/local/bin/"
 
-        echo Si señor a sus ordenes | $altavoz
-        echo Pero necesito su clave secreta | $altavoz
+	r="Solo puedes pedirme eso si eres amigo del 'Administrador'" 
+	echo $r | $altavoz
 
 
 	echo El path es: $path
@@ -73,6 +70,7 @@ case "$pregunta" in
 	echo 
 ;;
 
+# para que funcion esto debo aun definir su formato 
 "dame detalle de ")
        rpm -qai "$2"
 ;;
@@ -87,15 +85,13 @@ case "$pregunta" in
 
 "cuales son los grupos de paquetes disponibles ")
 	echo Voy a buscarlos dame un segundo porfavor: | $altavoz
-	echo Pero necesito su clave secreta | $altavoz
 	sudo dnf grouplist
 	echo Aqui tienes los programas que encontre | $altavoz
 
 ;;
 
 "actualiza el sistema ")
-	echo Si señor a sus ordenes | $altavoz
-	echo Pero necesito su clave secreta | $altavoz
+	echo | espeak "Yes sr."
 	sudo dnf -y update
 	echo Ahora limpieza de paquetes
 	dnf clean packages
@@ -152,13 +148,13 @@ case "$pregunta" in
 
 
 "que fecha es ")
-	echo date
+	date
 ;;
 
 
 #- Preguntas personales ---------------------------------------------------
 "hola ")
-
+	
 	r="Hola $USER me da gusto saber de ti!"
 	echo $r | $altavoz
 ;;
@@ -171,7 +167,6 @@ case "$pregunta" in
 "como te llamas "  | "cual es tu nombre ")
 	r="Mi nombre es Patricia, pero puedes decirme paty"
 	echo $r | $altavoz
-	echo $r
 ;;
 
 "que edad tienes " | "cuantos años tienes ")
@@ -213,21 +208,25 @@ case "$pregunta" in
 	if [ -f "~/.paty/$USER/datos/nacio_en" ]; then
 		echo ya lo somos
 	fi
-
+	# creamos una carpeta escondida con el nombre de .paty
+	# dentro de ella guardaremos datos personales del $USER
+	# para personalizar las respuestas
 	mkdir ~/.paty
 	echo Ohhhh, listo $USER ahora lo somos 
 	$altavoz "PERO SOLO SI ERES SOLTERO"
 	echo Donde naciste?
 	mkdir -p ~/.paty/$USER/datos
 	read l
+	# registramos su ciudad de nacimiento, 
+	# creo que sera mejor hacerlo en un solo fichero 
+
 	echo $l >  ~/.paty/$USER/datos/nacio_en
-	echo Listo, lo recordare | $altavoz
 ;;
 
 "cuentame un chiste ")
 	$altavoz -f "/home/$USER/.paty/chistes/1.txt"
-
-;;
+	
+;; 
 
 
 
