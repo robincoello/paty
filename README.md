@@ -4,6 +4,13 @@ Quiero hablar con paty como si fuera un humano y no una computadora, por el mome
 estilo: ```date``` para saber que fecha es pero lo que quiero es que escribir ```que fecha es``` y tener el mismo resultado
 
 
+Requieres de los siguintes paquetes
+
+* jq
+* espeak
+
+
+
 
 ## Tipos de preguntas
 

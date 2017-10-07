@@ -48,21 +48,6 @@ done
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #echo $pregunta
 #- Preguntas Sistema ----------------------------------
 case "$pregunta" in 
