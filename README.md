@@ -111,11 +111,17 @@ paty cual es tu nombre
 
 
 
+Ahora nos queda hacer un sitio web con una base de datos de preguntas y respuestas (pyr) seguramente con puntajes para que los 
+usuarios publiquen sus pyr y paty pueda leer estas pyr y presentarlas en la consola, 
+
+## Hacer
+* pasar comando de linux segun tipo de distribucion
+* como puntuar las respuestas desde la consola
+* 
 
 
 
-
-## Para leer en json 
+## Para leer en json desde la web via una api
 
 ```
 [robin@localhost paty]$ php pr-json.php | jq '.'

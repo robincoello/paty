@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 
 # esta es una funcion para la lista de preguntas
-# en si solo coje las lineas que empiezan por " 
+# en si solo coje las lineas que empiezan por "
 # en este caso son las preguntas, si ubiera otro case,
 # tambien las presentaria
 
@@ -56,8 +56,8 @@ case "$pregunta" in
 
 	path="/usr/local/bin/"
 
-	r="Solo puedes pedirme eso si eres amigo del 'Administrador'" 
-	echo $r | $altavoz
+        echo Si señor a sus ordenes | $altavoz
+        echo Pero necesito su clave secreta | $altavoz
 
 
 	echo El path es: $path
@@ -67,9 +67,10 @@ case "$pregunta" in
 ;;
 
 "dame la lista de programas ")
-	echo Voy a buscarlos dame un segundo porfavor: | espeak -ves-la
+	echo Voy a buscarlos dame un segundo porfavor: | $altavoz
 	rpm -qa | nl
-	echo Aqui tienes los programas que encontre | espeak -ves-la
+	echo Aqui tienes los programas que encontre | $altavoz
+	echo 
 ;;
 
 "dame detalle de ")
@@ -85,11 +86,16 @@ case "$pregunta" in
 ;;
 
 "cuales son los grupos de paquetes disponibles ")
+	echo Voy a buscarlos dame un segundo porfavor: | $altavoz
+	echo Pero necesito su clave secreta | $altavoz
 	sudo dnf grouplist
+	echo Aqui tienes los programas que encontre | $altavoz
+
 ;;
 
 "actualiza el sistema ")
-	echo | espeak "Yes sr."
+	echo Si señor a sus ordenes | $altavoz
+	echo Pero necesito su clave secreta | $altavoz
 	sudo dnf -y update
 	echo Ahora limpieza de paquetes
 	dnf clean packages
@@ -152,7 +158,7 @@ case "$pregunta" in
 
 #- Preguntas personales ---------------------------------------------------
 "hola ")
-	
+
 	r="Hola $USER me da gusto saber de ti!"
 	echo $r | $altavoz
 ;;
@@ -165,6 +171,7 @@ case "$pregunta" in
 "como te llamas "  | "cual es tu nombre ")
 	r="Mi nombre es Patricia, pero puedes decirme paty"
 	echo $r | $altavoz
+	echo $r
 ;;
 
 "que edad tienes " | "cuantos años tienes ")
@@ -214,12 +221,13 @@ case "$pregunta" in
 	mkdir -p ~/.paty/$USER/datos
 	read l
 	echo $l >  ~/.paty/$USER/datos/nacio_en
+	echo Listo, lo recordare | $altavoz
 ;;
 
 "cuentame un chiste ")
 	$altavoz -f "/home/$USER/.paty/chistes/1.txt"
-	
-;; 
+
+;;
 
 
 
