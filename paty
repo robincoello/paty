@@ -18,11 +18,23 @@ altavoz="espeak -ves-la -p 99"
 # tambien las presentaria
 lista_de_preguntas(){
 #	echo -e "$azul Esta es la  lista de preguntas que puedo responder"
+	#echo	$"This is a string to translate"
 	echo ===================================
 	sed -n '/^"/p' /usr/local/bin/paty | nl
 	echo ===================================
 #	echo -e $azulf
 }
+
+#Esto aficha las instruciones para calificar la repsuesta en la web
+califiar_respuesta(){
+	echo ===================================
+	echo Si deseas calificar la respuesta 
+	echo Dale una puntuación de 1 a 10
+	echo ===================================
+
+}
+
+
 
 
 
@@ -70,6 +82,23 @@ case "$pregunta" in
 	echo 
 ;;
 
+"como puedo ver los puertos abiertos de una ip ")
+	
+	r='Voy abrir una nueva ventana, Alli ejecuta el siguiente comando:' 
+	
+	echo "$USER $r" | $altavoz	
+	echo 	
+	echo nmap ip
+	echo Ejemplo:
+	echo nmap 8.8.8.8
+	gnome-terminal
+	echo 
+	califiar_respuesta
+	echo 
+;;
+
+
+
 # para que funcion esto debo aun definir su formato 
 "dame detalle de ")
        rpm -qai "$2"
@@ -77,6 +106,7 @@ case "$pregunta" in
 
 "que version de fedora estoy usando ")
 ##	sudo dnf install -y redhat-lsb-core
+	echo Esta es la version | $altavoz
 	echo 
 	lsb_release -a
 	cat /etc/redhat-release	
@@ -179,11 +209,27 @@ case "$pregunta" in
 	echo $r | $altavoz	
 	firefox https://github.com/robincoello/paty
 ;;
-
+## vamos a probar la lectura de un json 
+## en local
 "como me llamo ")
-	r=$USER
+	r=`php pr-json.php | jq '.respuesta'`
+	echo $r 
 	echo $r | $altavoz
+	cat pr-json.php
+	
 ;;
+## ahora probamos en una web
+
+"donde naciste ")
+	echo "Probamos desde http://latinos.be/paty.php"
+	r=`curl http://latinos.be/paty.php | jq '.respuesta'`
+	echo $r 
+	echo $r | $altavoz
+	firefox http://latinos.be/paty.php
+	
+;;
+
+
 
 #- Ayuda de paty
 "ayudame " | "ayuda")
@@ -235,7 +281,7 @@ case "$pregunta" in
 *)
 # si el usuario pregunta algo que no esta revisto, 
 # le pasamos un mensaje
-	r="$USER, tienes que hacer una pregunta que pueda responder"
+	r="$USER, esa pregunta no se la respuesta, si me das la respuesta la proxima vez lo recordare"
 	echo $r | $altavoz
 # y la lista de preguntas que podemos responder
 	lista_de_preguntas

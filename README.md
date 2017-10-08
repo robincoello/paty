@@ -136,9 +136,9 @@ usuarios publiquen sus pyr y paty pueda leer estas pyr y presentarlas en la cons
 
 ```
 
+https://ouep.eu/shell/internationalisation-de-scripts-bash/
 
-
-
+https://www.semicomplete.com/projects/xdotool/xdotool.xhtml
 
 
 

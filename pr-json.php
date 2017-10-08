@@ -1,24 +1,9 @@
 <?php
-
-$preguntas = array(
-	"id"=>"01",
-	"pregunta"=>"Cual es la capital del Ecuador",
-	"respuesta"=>"Quito",
-	"estatus"=>"1",
-
-
-
-
-
-);
-
-
-echo json_encode($preguntas); 
-
+$array = array(
+	"id"=>"1", 
+	"pregunta"=>"Como te llamas", 
+	"respuesta"=>"Robinson enrique coello sanchez",
+	"puntos"=>"100",    
+    );
+echo json_encode($array); 
 ?>
-
-
-
-
-
-

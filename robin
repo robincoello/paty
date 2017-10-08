@@ -1,0 +1,12 @@
+
+#! /usr/local/bin/latino
+
+
+
+
+
+
+
+escribir(sis.pipe("ls -la | nl"))
+ 
+

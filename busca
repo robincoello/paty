@@ -2,20 +2,8 @@
 
 # programas
 
-case "$1" in 
+echo La pregunta es:
+php pr-json.php | jq '.pregunta'
 
-"programas")
-	rpm -qa | nl
-;;
-
-"programa")
-	rpm -qa
-;;
-
-
-*)
-	echo bash busca programas
-;;
-
-esac
-
+echo La respuesta a esa pregunta es:
+php pr-json.php | jq '.respuesta'
