@@ -25,12 +25,19 @@ lista_de_preguntas(){
 #	echo -e $azulf
 }
 
+#respuesta_segun_pregunta(pregunta){
+# lee la respuesta en local y la presenta si encuentra
+# lee la respuesta en la web y la presenta  si la encuentra
+# si no hay en ninguna de las dos, le dice que no saber y propone al usuario una respuesta para recordarla y graba en local
+#}
+
 #Esto aficha las instruciones para calificar la repsuesta en la web
-califiar_respuesta(){
-	echo ===================================
-	echo Si deseas calificar la respuesta 
-	echo Dale una puntuación de 1 a 10
-	echo ===================================
+calificar_respuesta(){
+	echo "==================================="
+	echo "Si deseas calificar la respuesta" 
+	echo "Dale una puntuación de 1 a 10"
+	echo " "
+	echo "==================================="
 
 }
 
@@ -204,11 +211,22 @@ case "$pregunta" in
 	echo $r | $altavoz
 ;;
 
+
 "donde vives ")
 	r="En realidad no vivo, solo soy un programa de computador te invito que veas mi sitio web"
 	echo $r | $altavoz	
 	firefox https://github.com/robincoello/paty
 ;;
+
+"saluda ")
+	echo "http://localhost/paty_web/api.php"
+	r=`curl -b "pregunta=saluda; type=text/html" http://localhost/paty_web/api.php | jq '.respuesta'`
+	echo $r 
+	echo $r | $altavoz
+	firefox http://localhost/paty_web/api.php
+	
+;;
+
 ## vamos a probar la lectura de un json 
 ## en local
 "como me llamo ")
@@ -274,14 +292,16 @@ case "$pregunta" in
 	
 ;; 
 
-
-
+"dame la lista de carpetas ")
+	echo "Esta es la lista de carpetas"
+	ls -la 
+;;
 
 #- Preguntas no existentes --------------------------------------
 *)
 # si el usuario pregunta algo que no esta revisto, 
 # le pasamos un mensaje
-	r="$USER, esa pregunta no se la respuesta, si me das la respuesta la proxima vez lo recordare"
+	r="$USER, esa pregunta no se la respuesta, si me das la respuesta la proxima vez lo recordare; de todas maneras aca tienes la lista de preguntas que puedo responder"
 	echo $r | $altavoz
 # y la lista de preguntas que podemos responder
 	lista_de_preguntas

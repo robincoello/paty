@@ -1,0 +1,6 @@
+#! /usr/bin/bash
+
+cd ~
+mkdir .paty
+cd .paty
+echo "#! /usr/bin/bash" > paty

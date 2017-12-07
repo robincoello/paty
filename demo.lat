@@ -1,8 +1,10 @@
+#! /usr/local/bin/latino
+
 a = verdadero
 b = verdadero
 
 
-si( verdadero && -(verdadero) )
+si( verdadero && !verdadero )
     escribir("Verdadero")
 sino
     escribir("Falso")

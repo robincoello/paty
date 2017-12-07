@@ -1,45 +1,62 @@
 # paty
 
-Quiero hablar con paty como si fuera un humano y no una computadora, por el momento cuando quiero saber algo paso codigos 
-estilo: ```date``` para saber que fecha es pero lo que quiero es que escribir ```que fecha es``` y tener el mismo resultado
+Quiero hablar con paty como si fuera un humano y no una computadora, por el momento cuando quiero saber algo ejemplo la fecha escribo en la consola :
+ 
+```date``` 
+
+y me sale algo parecido a esto: 
+
+``` jue dic  7 23:12:29 CET 2017  ```
 
 
-## Requieres de los siguintes paquetes
+pero lo que quiero es que escribir 
+
+```que fecha es``` 
+
+y tener un resultado mas claro o facil de entender
+
+
+## Requiere de los siguientes paquetes
 
 * jq
 * espeak
 
+https://github.com/dominictarr/JSON.sh
 
 
 
 ## Tipos de preguntas
+Hay varias formas de hacer una pregunta, vamos a clasificarlas en 3 tipos segun si contiene o no el dato el cual necesitamos hacer la pregunta
+
 
 ### simples
 
-Una pregunta simple ejemplo:
+Una pregunta simple donde no necesita de un dato extra dentro o fuera de la pregunta para ser respondida
 
-```como te llamas?``` Respuesta: ```robin```
 
-### con datos extra
+```como te llamas?``` Respuesta: ```paty```
 
-Una pregunta con dato estra
+### Con datos extra
+
+Una pregunta con dato extra
 
 ```cuanto es? 2+2``` respuesta ```4```
 
-Aqui podemos pasar un dato al final de la pregunta, incluso esta fuera de ella, y sin este dato no podemos responder la pregunta
+Aqui podemos pasar un dato al final de la pregunta, y si separamos el dato del resto de la frase podriamos aun responder a la pregunta solo con el dato.
 
 ### con dato extra dentro o completa
 
-```cual es la capital de Ecuador?``` respuesta ```Quito```
+```La capital del Ecuador es?``` respuesta ```Quito```
 
-En este caso el dato esta dentro de la pregunta ya que no podriamos hacerla de esta manera
+En este caso el dato Ecuador esta dentro (en cualquier parte de la pregunta) si separamos el dato del resto de la frase, el dato no tiene ningun significado
 
 ```cual es la capital de? Ecuador``` no suena natural
 
 
-### Actualemte
+### Actualmente
 
-Asi que por el momento ```paty``` solo se puede responder a preguntas simples
+Por el momento ```paty``` solo se puede responder a preguntas simples ya que son preguntas programadas para dar una respuesta sin ningun tipo de analisis de la pregunta, 
+esto quiere decir que basta con un error de escritura en la pregunta para que nos de un resultado diferente.
 
 ## El problema
 
