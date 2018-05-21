@@ -25,7 +25,7 @@ lista_de_preguntas(){
 #	echo -e $azulf
 }
 
-#respuesta_segun_pregunta(pregunta){
+# respuesta_segun_pregunta(pregunta){
 # lee la respuesta en local y la presenta si encuentra
 # lee la respuesta en la web y la presenta  si la encuentra
 # si no hay en ninguna de las dos, le dice que no saber y propone al usuario una respuesta para recordarla y graba en local
@@ -49,10 +49,10 @@ calificar_respuesta(){
 # y salir de el solo cuando diga
 # paty chao, o algo parecido 
 
-#while [ -z $respuesta ]  || [ $respuesta != 'si'  ] 
-#do
-#        read -p '>> ' respuesta
-#done
+while [ -z $respuesta ]  || [ $respuesta != 'si'  ] 
+do
+        read -p '>> ' respuesta
+done
 
 
 # con esto cojo los parametros enviados para concatenarlos y hacer la pregunta

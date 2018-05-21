@@ -1,4 +1,4 @@
-# paty
+# Paty
 
 Quiero hablar con paty como si fuera un humano y no una computadora, por el momento cuando quiero saber algo ejemplo la fecha escribo en la consola :
  
