@@ -1,6 +1,6 @@
 # Paty
 
-Quiero hablar con paty como si fuera un humano y no una computadora, por el momento cuando quiero saber algo ejemplo la fecha escribo en la consola :
+Quiero hablar con paty como si fuera un humano y no una computadora, por el momento cuando quiero saber algo, ejemplo: 'la fecha' escribo en la consola :
  
 ```date``` 
 
@@ -9,13 +9,12 @@ y me sale algo parecido a esto:
 ``` jue dic  7 23:12:29 CET 2017  ```
 
 
-pero lo que quiero es que escribir 
+pero lo que quiero es escribir: 
 
 ```que fecha es``` 
 
-y tener un resultado mas claro o facil de entender
+y tener un resultado mas claro y facil de entender
 
-Ahora le pusimos voz a 'Paty'
 
 
 ## Requiere de los siguientes paquetes
