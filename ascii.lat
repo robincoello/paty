@@ -1,0 +1,5 @@
+f = leer()
+
+escribir(cadena.reemplazar(f,"o","00"))
+//escribir(ascii.mayusculas(f))
+

@@ -2,6 +2,13 @@
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <df name="programacion">
+        <in>comentarios.md</in>
+        <in>osi.md</in>
+        <in>palabras_claves.md</in>
+        <in>repetir.md</in>
+        <in>si_sino.md</in>
+      </df>
     </df>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -36,6 +43,16 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="programacion/comentarios.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="programacion/osi.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="programacion/palabras_claves.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="programacion/repetir.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="programacion/si_sino.md" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

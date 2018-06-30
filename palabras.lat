@@ -1,0 +1,13 @@
+//frase = "Las variables son identificadores asociados a valores."
+escribir("Dame una frase")
+frase = leer()
+
+escribir(cadena.mayusculas(frase))
+
+escribir(cadena.invertir(frase))
+
+escribir("Dame una frase")
+f1 = leer()
+escribir("Dame otra")
+f2 = leer()
+escribir(cadena.comparar(f1,f2))

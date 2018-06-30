@@ -1,0 +1,83 @@
+limpiar()
+preguntas = 'Hola, ud esta buscando un conejo'
+
+escribir("Hola, en que te puedo ayudar?")
+
+
+// esta linea es para asignar lo que el usuario escriba a la variable pregunta
+pregunta = leer()
+
+// muestro la pregunta que el usuario realiza
+//escribir(pregunta)
+
+mientras ( pregunta != 'chao')
+
+
+si(cadena.contiene(preguntas,pregunta))
+    escribir("Respuesta: " .. pregunta)
+    escribir(cadena.separar(pregunta, " + "))
+sino
+    
+    escribir('No se encontro una respuesta: ' .. pregunta)
+    escribir(cadena.separar(pregunta))
+fin
+
+    pregunta = leer()
+
+fin
+
+
+
+/* esto es para corejir errores
+escribir("Detalles de lo escrito")
+escribir("Largo: " .. cadena.longitud(pregunta) )
+*/
+
+
+
+
+funcion accion_test (arg1)
+  escribir("test_accion: " .. arg1)
+fin
+
+
+funcion accion_id (arg1)
+  escribir("id_accion: " .. arg1)
+fin
+
+
+funcion accion_idd (arg1)
+  escribir("id_accion: " .. arg1)
+fin
+
+funcion accion_fecha (arg1)
+    escribir(arg1)
+    escribir("Hoy es: jueves no te ahueves")
+fin
+
+
+funcion accion_casa (arg1)
+    escribir(arg1)
+    escribir("Mi casa es la mejor")
+fin
+
+
+comandos = [
+  {"comando" : "/test",     "accion" : accion_test },
+  {"comando" : "/id",       "accion" : accion_id },
+  {"comando" : "casa",       "accion" : accion_casa },
+  {"comando" : "/fecha",    "accion" : accion_fecha }
+]
+
+
+texto = leer()
+//texto = "/test"  #para test
+
+
+//desde (i=0; i<comandos.longitud(); i++)
+desde (i=0; i< lista.longitud(comandos); i++)
+  si texto == comandos[i].comando
+    comandos[i].accion("enviando desde disparador")
+    
+  fin
+fin

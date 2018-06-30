@@ -1,13 +1,41 @@
 #!/usr/local/bin/latino
 
 cmd = "echo 'hola mundo'"
+latino_version = sis.pipe('latino -v')
+
 
 //salida = ejecutar_pipe(cmd)
 
 salida = sis.pipe(cmd)
 
-poner("salida: ")
+escribir("salida: ")
+escribir(latino_version)
+//escribir("---------------------------------------------------")
+//escribir("*************************************************")
+//escribir(salida)
 
-poner("---------------------------------------------------")
+i = 0
+mientras i < 5
+    escribir("Esto es i: "..i)
+i++
+fin
 
-poner(salida)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
