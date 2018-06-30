@@ -1,4 +1,5 @@
 
+```
 
 si $dia == lunes
     ir a trabajar
@@ -15,11 +16,12 @@ osi ( $dia = Sabado ) || ( $dia == domingo )
 otro
     Dia no definido
 
-
+```
     
     
 La palabra otro | otra cumple la misma funcion y es opcional
 
+```
 si $dia == lunes
     empieza la semana, buen trabajo
 osi $dia == viernes
